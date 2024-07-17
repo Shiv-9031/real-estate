@@ -1,0 +1,33 @@
+.container {
+  width: 820px;
+  height: 368px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.container_1 {
+  display: flex;
+  justify-content: space-between;
+}
+.container_2 {
+  display: flex;
+  flex-direction: column;
+}
+.container_2 > textarea {
+  width: 820px;
+  height: 96px;
+
+  border-radius: 2px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+  color: #00000040;
+  padding-top: 10px;
+  padding-left: 10px;
+}

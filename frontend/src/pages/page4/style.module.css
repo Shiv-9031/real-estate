@@ -1,0 +1,43 @@
+.container {
+  width: 820px;
+  height: 368px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.line {
+  width: 820px;
+  height: 0px;
+
+  border: 1px solid #d6d6d6;
+  /* border: 1px solid red; */
+}
+
+.SocietyAmenities {
+  width: 820px;
+  /* height: Hug (1,012px)px; */
+  /* border: 2px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 90px;
+}
+.societyAmenity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 135px;
+  /* border: 1px solid green; */
+}
+.societyAmenity > img {
+  width: 135px;
+  height: 96px;
+}
+.societyAmenity > input {
+  width: 26px;
+  height: 26px;
+
+  border-radius: 6px;
+  border: 0.8px solid #878787;
+}

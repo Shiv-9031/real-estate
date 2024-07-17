@@ -1,0 +1,36 @@
+.Checkbox {
+  width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  /* height: 138px; */
+}
+.Checkbox > .checkboxList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 25px;
+}
+.checkboxList > label {
+  width: 240px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+  color: #000000;
+}
+.checkboxList > label > input {
+  width: 26px;
+  height: 26px;
+
+  border-radius: 6px;
+  border: 0.8px solid #878787;
+}

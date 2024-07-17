@@ -1,0 +1,31 @@
+.container {
+  width: 820px;
+  height: 368px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.uploadPhotos {
+  width: 820px;
+  height: 309px;
+
+  border: 1px solid #d6d6d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.uploadPhoto > p {
+  background-color: #122b49;
+  width: 176px;
+  height: 40px;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 8px;
+  opacity: 0px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

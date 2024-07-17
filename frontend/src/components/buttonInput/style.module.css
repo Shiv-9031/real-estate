@@ -1,0 +1,37 @@
+.container {
+  width: 820px;
+  height: 71px;
+  display: flex;
+  flex-direction: column;
+
+  /* border: 1px solid black; */
+}
+.container > label {
+  width: 820px;
+  height: 30px;
+  padding: 0px 0px 8px 0px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  text-align: left;
+  color: #000000d9;
+}
+.buttonPallete {
+  width: 814px;
+  height: 39px;
+  gap: 24px;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+}
+.buttonPallete > button {
+  /* width: 159px; */
+  height: 39px;
+  padding: 10px 25px 10px 25px;
+  gap: 10px;
+  border-radius: 30px;
+
+  background: #ffffff;
+  border: 1px solid #d6d6d6;
+}

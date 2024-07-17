@@ -1,0 +1,12 @@
+.body {
+  /* height: auto; */
+  width: 100%;
+
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  /* position: relative; */
+}
+.Layout {
+  /* border: 1px saddlebrown solid; */
+  width: 100%;
+}
