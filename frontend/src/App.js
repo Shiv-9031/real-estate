@@ -11,6 +11,7 @@ import Page8 from "./pages/page8/Page8";
 import Page9 from "./pages/page9/Page9";
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoutes from "./helper/ProtectedRoutes";
+import { ToastContainer } from "react-toastify";
 function App() {
   const [info, setInfo] = React.useState({});
 
@@ -88,11 +89,15 @@ function App() {
   ];
 
   return (
-    <Routes>
-      {pages.map((page, index) => {
-        return <Route path={page.path} element={page.element} />;
-      })}
-    </Routes>
+    <>
+      <Routes>
+        {pages.map((page, index) => {
+          return <Route path={page.path} element={page.element} />;
+        })}
+      </Routes>
+
+      <ToastContainer />
+    </>
   );
 }
 

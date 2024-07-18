@@ -5,6 +5,8 @@ import style from "./style.module.css";
 import bulletImage from "../../image/image 29.png";
 import { sendPostRequest } from "../../helper/sendHtttprequest";
 import { bulletsPoints, country, owner } from "./PageOnedata";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Page1() {
   const [PageOneInfo, setPageOneInfo] = React.useState({
@@ -21,14 +23,22 @@ function Page1() {
   //function for receiving data from input
 
   function PageOneReceiveInfoFunction(name, info) {
+    if (name === "" || info === "") {
+      toast.error("Please fill the form");
+      return;
+    }
     setPageOneInfo({ ...PageOneInfo, [name]: info });
   }
 
   //function for sending data
 
   async function sendRequest() {
-    const response = await sendPostRequest(PageOneInfo, "registration");
-    console.log(response.data);
+    try {
+      const response = await sendPostRequest(PageOneInfo, "registration");
+      console.log(response.data);
+    } catch (error) {
+      toast.error(error);
+    }
   }
 
   return (
