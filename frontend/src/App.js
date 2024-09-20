@@ -15,6 +15,7 @@ import {
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoutes from "./helper/ProtectedRoutes";
 import { ToastContainer } from "react-toastify";
+
 function App() {
   const [info, setInfo] = React.useState({});
 

@@ -23,6 +23,10 @@
   /* width: 117px; */
   height: 52.93px;
 }
+.logo > a {
+  text-decoration: none;
+  color: rgba(145, 115, 115, 0.471);
+}
 .container > .components {
   width: 75%;
   height: 72px;

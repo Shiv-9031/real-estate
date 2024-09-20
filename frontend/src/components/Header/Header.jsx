@@ -37,7 +37,10 @@ function Header() {
   return (
     <div className={style.container}>
       <div className={style.logo}>
-        <img src={logo} alt="logo" />
+        {/* <img src={logo} alt="logo" /> */}
+        <Link to={"/"}>
+          <h1>Logo</h1>
+        </Link>
       </div>
       <div className={style.components}>
         <div className={style.component}>

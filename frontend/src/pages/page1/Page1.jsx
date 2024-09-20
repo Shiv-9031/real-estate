@@ -8,39 +8,66 @@ import { bulletsPoints, country, owner } from "./PageOnedata";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { useNavigate } from "react-router-dom";
+
 function Page1() {
+  const navigation = useNavigate();
   const [PageOneInfo, setPageOneInfo] = React.useState({
     "I am ": "",
     "Your Name": "",
-    CountryCode: "",
+    // CountryCode: "",
     Country: "",
     Phone: "",
     Email: "",
   });
 
-  const [next, setNext] = React.useState(true); // for next button
+  const [next, setNext] = React.useState("page1_1"); // for next button
+  const [otp, setOtp] = React.useState(); // for next button
 
   //function for receiving data from input
 
   function PageOneReceiveInfoFunction(name, info) {
-    if (name === "" || info === "") {
-      toast.error("Please fill the form");
-      return;
-    }
     setPageOneInfo({ ...PageOneInfo, [name]: info });
+  }
+
+  function ReceiveOtp(_, otp) {
+    setOtp(otp);
   }
 
   //function for sending data
 
   async function sendRequest() {
+    const response = "";
     try {
-      const response = await sendPostRequest(PageOneInfo, "registration");
-      console.log(response.data);
+      // if (next == "page1_1") {
+      //   response = await sendPostRequest(PageOneInfo, "registration");
+      // } else {
+      //   response = await sendPostRequest(otp, "verification-otp");
+      // }
+
+      if (/*response.data.otp === otp*/ otp === 1234) {
+        console.log("login");
+        toast.success("log in");
+
+        navigation("/page-2");
+      }
     } catch (error) {
       toast.error(error);
     }
   }
 
+  //checkinfo
+
+  function checkInfo() {
+    for (let property in PageOneInfo) {
+      if (PageOneInfo[property] === "") {
+        toast.error(`fill ${property}`);
+        return;
+      }
+    }
+    sendRequest();
+    setNext("page1_2");
+  }
   return (
     <Layout>
       <div className={style.container}>
@@ -69,7 +96,7 @@ function Page1() {
             <div className={style.landlord_detail_1}>
               <p>LETS GET YOU STARTED !</p>
             </div>
-            {next === true ? (
+            {next === "page1_1" ? (
               <div className={style.landlord_detail_2}>
                 <div className={style.landlord_detail_2_inner}>
                   <Input
@@ -114,6 +141,7 @@ function Page1() {
                   placeholder="0 0 0 0"
                   label={`Enter OTP sent on ${PageOneInfo.Phone}`}
                   starPosition="right"
+                  fn={ReceiveOtp}
                 />
               </div>
             )}
@@ -123,8 +151,7 @@ function Page1() {
               </p>
               <button
                 onClick={() => {
-                  setNext(false);
-                  sendRequest();
+                  checkInfo();
                 }}
               >
                 Next

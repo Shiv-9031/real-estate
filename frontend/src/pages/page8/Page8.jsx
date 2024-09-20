@@ -32,7 +32,7 @@ function Page8() {
 
         <div className={style.Buttons}>
           <div className={style.Button}>
-            <Link>Edit Property Listing</Link>
+            <Link to={"/page-2"}>Edit Property Listing</Link>
           </div>
           <div className={style.Button}>
             <Link>Preview Property Listing</Link>
